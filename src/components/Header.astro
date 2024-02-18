@@ -1,0 +1,32 @@
+---
+import Wrapper from "@components/Wrapper.astro"
+import Button from "@components/ui/Button.astro"
+const LINKS = [
+  { href: "/services", label: "Servicios" },
+  { href: "/join", label: "Unete a Braavos" },
+  { href: "/blog", label: "Blog" },
+  { href: "/help", label: "Ayuda" },
+]
+---
+
+<header>
+  <Wrapper classname="py-6">
+    <nav class="flex items-center justify-between">
+      <a href="/" class="text-2xl text-gray-900 tracking-[2px] font-semibold"
+        >Braavos</a
+      >
+      <ul class="grow gap-6 flex items-center mx-6">
+        {
+          LINKS.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="flex">
+        <Button>Solicitar servicio</Button>
+      </div>
+    </nav>
+  </Wrapper>
+</header>
